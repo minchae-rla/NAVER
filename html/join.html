@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="./../teamProject/join.css">
+  <script defer src="./../teamProject/join.js"></script>
+</head>
+
+<body>
+  <main>
+    <!-- 타이틀 -->
+    <h1 class="title"><a href="#">CORINI</a></h1>
+
+    <!-- 아이디, 비밀번호, 이메일 입력 폼 -->
+    <form action="" method="">
+      <div class="join-info">
+        <div><input type="text" class="id-info" placeholder="아이디"></div>
+        <div>
+          <input type="password" class="pw-info" placeholder="비밀번호">
+          <div class="mark"></div>
+        </div>
+        <div><input type="text" class="mail-info" placeholder="[선택] 이메일 주소(비밀번호 찾기 등 본인 확인용)"></div>
+      </div>
+      <p class="id-result result"></p>
+      <p class="pw-result result"></p>
+      <p class="pwlength-result result"></p>
+
+      <br>
+
+      <!-- 이름, 생년월일, 성별, 전화번호 입력 폼 -->
+      <div class="personal-info">
+        <div><input type="text" class="name-info" placeholder="이름"></div>
+        <div><input type="text" class="birth-info" placeholder="생년월일 8자리"></div>
+        <div><input type="text" class="phone-info" id="phone-format" placeholder="휴대전화번호 (010-0000-0000 형식으로 입력하세요)"></div>
+      </div>
+      <p class="name-result result"></p>
+      <p class="birth-result result"></p>
+      <p class="phone-result result"></p>
+      <p class="phoneType-result result"></p>
+
+      <br>
+      <br>
+
+      <button type="submit" class="joinSumbit">회원가입</button>
+    </form>
+  </main>
+</body>
+
+</html>

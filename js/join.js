@@ -1,0 +1,153 @@
+// ID·PW 미입력시 필수메시지 출력
+
+// ID관련정보 선택
+const id = document.querySelector(".id-info");
+console.log(id);
+const idResult = document.querySelector(".id-result");
+console.log(idResult);
+// PW관련정보 선택
+const pw = document.querySelector(".pw-info");
+console.log(pw);
+const pwResult = document.querySelector(".pw-result");
+console.log(pwResult);
+const pwlengthResult = document.querySelector(".pwlength-result");
+console.log(pwlengthResult);
+
+// 함수실행
+// 아이디 입력유무 체크
+function idcheck() {
+  if (!id.value) {
+    idResult.style.display = "block";
+    idResult.innerText = "아이디 : 필수정보입니다";
+    idResult.style.color = "red";
+    id.style.border = "1px solid red";
+  } else {
+    idResult.style.display = "none";
+    id.style.border = "1px solid gainsboro";
+  }
+};
+
+id.addEventListener("blur", idcheck);
+
+// 비밀번호 입력유무 체크
+function pwcheck() {
+  if (!pw.value) {
+    pwResult.style.display = "block";
+    pwlengthResult.style.display = "none";
+    pwResult.innerText = "비밀번호 : 필수정보입니다";
+    pwResult.style.color = "red";
+    pw.style.border = "1px solid red";
+  } else if (pw.value.length > 16 || pw.value.length < 8) {
+    pwlengthResult.style.display = "block";
+    pwlengthResult.innerText = "비밀번호 : 8~16자를 사용해주세요";
+    pwlengthResult.style.color = "red";
+    pwResult.style.display = "none";
+    pw.style.border = "1px solid red";
+  } else {
+    pwlengthResult.style.display = "none";
+    pw.style.border = "1px solid gainsboro";
+  }
+};
+
+pw.addEventListener("blur", pwcheck);
+
+
+// 이름, 생년월일, 전화번호 미입력시 필수 메시지 출력
+
+// 이름 관련정보 선택
+const name = document.querySelector(".name-info");
+console.log(name);
+const nameResult = document.querySelector(".name-result");
+console.log(nameResult);
+// 이름 입력 유무 체크
+function namecheck() {
+  if (!name.value) {
+    nameResult.style.display = "block";
+    nameResult.innerText = "이름 : 필수정보입니다";
+    nameResult.style.color = "red";
+    name.style.border = "1px solid red";
+  } else {
+    nameResult.style.display = "none";
+    name.style.border = "1px solid gainsboro";
+  }
+};
+
+name.addEventListener("blur", namecheck);
+
+// 생년월일 관련정보 선택
+const birth = document.querySelector(".birth-info");
+console.log(birth);
+const birthResult = document.querySelector(".birth-result");
+console.log(birthResult);
+// 생년월일 입력 유무 체크
+function birthcheck() {
+  if (!birth.value) {
+    birthResult.style.display = "block";
+    birthResult.innerText = "생년월일 : 필수정보입니다";
+    birthResult.style.color = "red";
+    birth.style.border = "1px solid red";
+  } else {
+    birthResult.style.display = "none";
+    birth.style.border = "1px solid gainsboro";
+  }
+};
+
+birth.addEventListener("blur", birthcheck);
+
+
+// 전화번호 관련정보 선택
+const phone = document.querySelector("#phone-format");
+console.log(phone);
+
+const phone_format = /^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/ // -?로 작성하면 -가 있든없든 상관X
+
+const phoneResult = document.querySelector(".phone-result");
+console.log(phoneResult);
+const phoneTypeResult = document.querySelector(".phoneType-result");
+console.log(phoneTypeResult);
+// 전화번호 입력 유무 체크
+// 정규표현식을 사용하여 제대로 입력하였는지도 확인
+function phonecheck() {
+  const phone_input = phone.value; // 전화번호 입력값 가져오기
+  console.log(phone_input);
+
+  if (!phone_input) {
+    phoneResult.style.display = "block";
+    phoneResult.innerText = "휴대전화번호 : 필수정보입니다";
+    phoneResult.style.color = "red";
+    phone.style.border = "1px solid red";
+    phoneTypeResult.style.display = "none";
+  } else if (!phone_format.test(phone_input)) {
+    phoneTypeResult.style.display = "block";
+    phoneTypeResult.innerText = "휴대전화번호 : 휴대전화번호가 정확한지 확인해주세요";
+    phoneTypeResult.style.color = "red";
+    phoneResult.style.display = "none";
+  } else {
+    phoneTypeResult.style.display = "none";
+  }
+};
+
+phone.addEventListener("blur", phonecheck);
+
+// 비밀번호토글
+const mark = document.querySelector(".mark");
+mark.addEventListener("click", (e) => {
+  const input = document.querySelector("input.pw-info");
+  const isText = input.type === "text";
+
+  input.setAttribute('type', isText ? 'password' : 'text');
+
+  e.target.style.backgroundImage = `url('${isText ? './../teamProject/img/close.png' : './../teamProject/img/open.png'}')`;
+
+});
+
+// 회원가입완료 시 미입력체크
+const regibutton = document.querySelector(".joinSumbit");
+regibutton.addEventListener("click", () => {
+  event.preventDefault();
+  idcheck();
+  pwcheck();
+  namecheck();
+  birthcheck();
+  phonecheck();
+});
