@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+  <!-- CORINI  -->
+  <header>
+    <h1><a href="login.html">CORINI</a></h1>
+  </header>
+
+  <!-- input 과 로그인  -->
+  <main>
+    <div id="login_first">
+      <form>
+        <label class="login_icon">
+          <input type="text" class="login_input" name="id" placeholder="아이디">
+          <div class="delete1"></div>
+        </label>
+        <label class="login_icon">
+          <input type="password" class="login_input" name="pw" placeholder="비밀번호">
+          <div id="mark"></div>
+          <div class="delete2"></div>
+        </label>
+      </form>
+    </div>
+
+    <div id="login_last">
+      <input type="button" class="login_button" value="로그인" name="login">
+    </div>
+    <p id="result"></p>
+  </main>
+
+  <!-- 3개 버튼  -->
+  <footer>
+    <div class="login_ft"><a href="searchID.html">비밀번호 찾기</a></div>
+    <div class="login_ft"><a href="searchID.html">아이디 찾기</a></div>
+    <div class="login_ft"><a href="searchID.html">회원가입</a></div>
+  </footer>
+
+  <script src="../js/login.js"></script>
+</body>
+
+</html>
