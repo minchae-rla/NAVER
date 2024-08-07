@@ -1,0 +1,99 @@
+#searchpw-main {
+  width: 500px;
+  height: 600px;
+  margin-bottom: 10%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#searchpw-corini {
+  color: #F4C2C2;
+}
+
+.searchpw-button {
+  width: 100%;
+  height: 100%;
+  background-color: #F4C2C2;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#searchpw-search {
+  width: 240px;
+  height: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #F4C2C2;
+}
+
+#searchpw-section01 {
+  width: 500px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  align-items: center;
+  margin: 0 auto;
+  
+}
+
+#searchpw-section02 {
+  margin: 0 auto;
+}
+
+.searchpw01-input {
+  border: 1px solid gainsboro;
+  border-radius: 15px 15px 0 0 ;
+  width: 300px;
+  height: 50px;
+}
+
+.searchpw-input01{
+  width: 90%;
+  height: 90%;
+  border-style: none;
+}
+
+.searchpw02-input {
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+  width: 300px;
+  height: 50px;
+}
+
+.searchpw-input02{
+  width: 90%;
+  height: 90%;
+  border-style: none;
+}
+
+.searchpw03-input {
+  border: 1px solid gainsboro;
+  border-radius: 0 0 15px 15px;
+  width: 300px;
+  height: 50px;
+}
+
+.searchpw-input03{
+  width: 90%;
+  height: 90%;
+  border-style: none;
+}
+
+input:focus {
+  outline: none;
+}
