@@ -1,0 +1,141 @@
+div {
+  display: block;
+}
+
+.term_container {
+  position: relative;
+  height: 100%;
+}
+
+.term_inner {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.term_logo {
+  text-decoration: none;
+  color: #F4C2C2;
+  display: block;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  flex: none;
+  padding: 0px 75px 20px 20px;
+  text-align: center;
+}
+
+.term_head {
+  color: gray;
+  font-weight: bold;
+  font-size: 17px;
+  margin-left: 3px;
+}
+
+.term_check {
+  width: 30px;
+  height: 30px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.term_checkbox-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.term_checkbox-icon::before {
+  content: '';
+  display: block;
+  margin-right: 5px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid gray;
+  border-radius: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+input:checked+.term_checkbox-icon::before {
+  background: #F4C2C2;
+}
+
+.term_desc {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid gray;
+}
+
+.term_box {
+  overflow: auto;
+  max-height: 75px;
+  margin: 10px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.term_box::-webkit-scrollbar {
+  width: 20px;
+}
+
+.term_box::-webkit-scrollbar-thumb {
+  border: 6px solid white;
+  height: 40px;
+  background: gray;
+  border-radius: 10px;
+}
+
+.term_box::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.essential{
+  font-size: 13px;
+  color: #F4C2C2;
+  margin-right: 5px;
+}
+
+.optional{
+  font-size: 13px;
+  color: gray;
+  margin-right: 5px;
+}
+
+.term_btn-next-box{
+  width: 480px;
+  height: 50px;
+  margin: 0;
+
+}
+
+.term_btn-next{
+  cursor: pointer;
+  background-color: #F4C2C2;
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 100%;
+  height: 100%;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
+
+.term_btn-next:disabled{
+  background-color: gray;
+  cursor: default;
+}
