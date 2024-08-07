@@ -129,7 +129,7 @@ function phonecheck() {
 
 phone.addEventListener("blur", phonecheck);
 
-// 비밀번호토글
+// 비밀번호 토글
 const mark = document.querySelector(".mark");
 mark.addEventListener("click", (e) => {
   const input = document.querySelector("input.pw-info");
