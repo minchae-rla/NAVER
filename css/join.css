@@ -23,7 +23,7 @@ a {
   cursor: pointer;
 }
 
-input{
+input {
   border: none;
 }
 
@@ -38,6 +38,7 @@ input{
   border: 1px solid gainsboro;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .pw-info {
@@ -45,8 +46,9 @@ input{
   height: 70px;
   text-indent: 10px;
   border: 1px solid gainsboro;
-    display: flex;
+  display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .mail-info {
@@ -55,6 +57,7 @@ input{
   text-indent: 10px;
   border-radius: 0 0 15px 15px;
   border: 1px solid gainsboro;
+  box-sizing: border-box;
 }
 
 /* 두번째 박스(이름, 생년월일, 전화번호) */
@@ -64,6 +67,7 @@ input{
   text-indent: 10px;
   border-radius: 15px 15px 0 0;
   border: 1px solid gainsboro;
+  box-sizing: border-box;
 }
 
 .birth-info {
@@ -71,6 +75,76 @@ input{
   height: 70px;
   text-indent: 10px;
   border: 1px solid gainsboro;
+  box-sizing: border-box;
+}
+
+/* 성별, 국적선택 박스 크기 */
+.select-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 70px;
+  gap: 20px;
+  border: 1px solid gainsboro;
+}
+
+/* 성별선택박스 */
+.gender-select {
+  display: flex;
+}
+
+/* 남성 라디오 */
+.radio-male {
+  background-color: white;
+  border: 1px solid gainsboro;
+  width: 110px;
+  height: 50px;
+  border-radius: 15px 0px 0px 15px;
+  align-content: center;
+  text-align: center;
+  color: gray;
+}
+
+/* 여성 라디오 */
+.radio-female {
+  background-color: white;
+  border: 1px solid gainsboro;
+  width: 110px;
+  height: 50px;
+  border-radius: 0px 15px 15px 0px;
+  align-content: center;
+  text-align: center;
+  color: gray;
+}
+
+/* 국적선택박스 */
+.nationality-select {
+  display: flex;
+}
+
+/* 내국인 라디오 */
+.radio-local {
+  background-color: white;
+  border: 1px solid gainsboro;
+  width: 110px;
+  height: 50px;
+  border-radius: 15px 0px 0px 15px;
+  align-content: center;
+  text-align: center;
+  color: gray;
+}
+
+/* 외국인 라디오 */
+.radio-foreign {
+  background-color: white;
+  border: 1px solid gainsboro;
+  width: 110px;
+  height: 50px;
+  border-radius: 0px 15px 15px 0px;
+  align-content: center;
+  text-align: center;
+  color: gray;
 }
 
 .phone-info {
@@ -79,6 +153,7 @@ input{
   text-indent: 10px;
   border-radius: 0 0 15px 15px;
   border: 1px solid gainsboro;
+  box-sizing: border-box;
 }
 
 /* 텍스트 박스 포커스 시 색상변경 */
@@ -93,9 +168,26 @@ input[type="password"]:focus {
   display: none;
 }
 
+/* 성별/국적 라디오 상세 설정 */
+input[type="radio"] {
+  display: none;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+/* 라디오 박스 포커스 시 색상변경 */
+input:checked+label {
+  border: 2px solid #F4C2C2;
+  color: #F4C2C2;
+  font-weight: bold;
+  outline: none;
+}
+
 /* 비밀번호 토글 */
-.mark{
-  background-image: url("./../teamProject/img/close.png");
+.mark {
+  background-image: url("../img/close.png");
   background-size: 100% 100%;
   width: 30px;
   height: 20px;
@@ -107,7 +199,7 @@ input[type="password"]:focus {
 
 
 /* 회원가입완료버튼 */
-.joinSumbit{
+.joinSumbit {
   background-color: #F4C2C2;
   color: white;
   font-weight: bold;

@@ -96,7 +96,7 @@ birth.addEventListener("blur", birthcheck);
 
 
 // 전화번호 관련정보 선택
-const phone = document.querySelector("#phone-format");
+const phone = document.querySelector(".phone-info");
 console.log(phone);
 
 const phone_format = /^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/ // -?로 작성하면 -가 있든없든 상관X
@@ -137,7 +137,7 @@ mark.addEventListener("click", (e) => {
 
   input.setAttribute('type', isText ? 'password' : 'text');
 
-  e.target.style.backgroundImage = `url('${isText ? './../teamProject/img/close.png' : './../teamProject/img/open.png'}')`;
+  e.target.style.backgroundImage = `url('${isText ? '../img/close.png' : '../img/open.png'}')`;
 
 });
 
