@@ -12,7 +12,7 @@
 <body>
   <main>
     <!-- 타이틀 -->
-    <h1 class="title"><a href="login.html">CORINI</a></h1>
+    <h1 class="title"><a href="../html/login.html">CORINI</a></h1>
 
     <!-- 아이디, 비밀번호, 이메일 입력 폼 -->
     <form action="" method="">
@@ -34,7 +34,18 @@
       <div class="personal-info">
         <div><input type="text" class="name-info" placeholder="이름"></div>
         <div><input type="text" class="birth-info" placeholder="생년월일 8자리"></div>
-        <div><input type="text" class="phone-info" id="phone-format" placeholder="휴대전화번호 (010-0000-0000 형식으로 입력하세요)"></div>
+        <div class="select-info">
+          <div class="gender-select">
+            <input type="radio" id="male" name="gender" value="남성" checked><label class="radio-male" for="male">남성</label>
+            <input type="radio" id="female" name="gender" value="여성"><label class="radio-female" for="female">여성</label>
+          </div>
+          <div class="nationality-select">
+            <input type="radio" id="local" name="nationality" value="내국인" checked><label class="radio-local" for="local">내국인</label>
+            <input type="radio" id="foreign" name="nationality" value="외국인"><label class="radio-foreign" for="foreign">외국인</label>
+          </div>
+        </div>
+        <div><input type="text" class="phone-info" placeholder="휴대전화번호 (010-0000-0000 형식으로 입력하세요)">
+        </div>
       </div>
       <p class="name-result result"></p>
       <p class="birth-result result"></p>
