@@ -84,7 +84,7 @@ main {
 #mark{
   position: absolute;
   display: none;
-  top: 51%;
+  top: 53%;
   right: 38%;
   background-image: url('../img/close.png');
   background-position: center;
@@ -98,7 +98,7 @@ main {
 .delete1 {
   position: absolute;
   display: none;
-  top: 42%;
+  top: 45%;
   right: 36%;
   background-image: url('../img/delete.png');
   background-position: center;
@@ -112,7 +112,7 @@ main {
 .delete2 {
   position: absolute;
   display: none;
-  top: 51%;
+  top: 53%;
   right: 36%;
   background-image: url('../img/delete.png');
   background-position: center;
@@ -131,10 +131,9 @@ footer {
   justify-content: space-between;
 }
 
-
 .login_ft {
   font-size: 15px;
-  padding-right: 9%;
+  padding-right: 7%;
   border-right:1px solid gray ;
   cursor: pointer;
 }
