@@ -185,4 +185,5 @@ regibutton.addEventListener("click", () => {
   namecheck();
   birthcheck();
   phonecheck();
+  pwCheckRE();
 });
