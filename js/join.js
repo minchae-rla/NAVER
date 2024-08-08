@@ -13,9 +13,11 @@ function idcheck() {
     idResult.innerText = "아이디 : 필수정보입니다";
     idResult.style.color = "red";
     id.style.border = "1px solid red";
+    return false;
   } else {
     idResult.style.display = "none";
     id.style.border = "1px solid gainsboro";
+    return true;
   }
 };
 
@@ -37,16 +39,19 @@ function pwcheck() {
     pwResult.innerText = "비밀번호 : 필수정보입니다";
     pwResult.style.color = "red";
     pw.style.border = "1px solid red";
+    return false;
   } else if (pw.value.length > 16 || pw.value.length < 8) {
     pwlengthResult.style.display = "block";
     pwlengthResult.innerText = "비밀번호 : 8~16자를 사용해주세요";
     pwlengthResult.style.color = "red";
     pwResult.style.display = "none";
     pw.style.border = "1px solid red";
+    return false;
   } else {
     pwResult.style.display = "none";
     pwlengthResult.style.display = "none";
     pw.style.border = "1px solid gainsboro";
+    return true;
   }
 };
 
@@ -65,17 +70,18 @@ function pwCheckRE() {
     pwSecondeResult.innerText = "비밀번호확인 : 필수정보입니다";
     pwSecondeResult.style.color = "red";
     pwSecond.style.border = "1px solid red";
+    return false;
   } else if(pw.value == pwSecond.value) {
     pwSecondeResult.style.display = "none";
     pwSecond.style.border = "1px solid gainsboro";
+    return true;
   } else if (pw.value != pwSecond.value) {
     pwSecondeResult.style.display = "block";
     pwSecondeResult.innerText = "비밀번호가 일치하지 않습니다";
     pwSecondeResult.style.color = "red";
     pwSecond.style.border = "1px solid red";
-  } else {
-    pwSecond.style.border = "1px solid gainsboro";
-  }
+    return false;
+  } 
 };
 
 pwSecond.addEventListener("blur", pwCheckRE);
@@ -97,9 +103,11 @@ function namecheck() {
     nameResult.innerText = "이름 : 필수정보입니다";
     nameResult.style.color = "red";
     name.style.border = "1px solid red";
+    return false;
   } else {
     nameResult.style.display = "none";
     name.style.border = "1px solid gainsboro";
+    return true;
   }
 };
 
@@ -117,9 +125,11 @@ function birthcheck() {
     birthResult.innerText = "생년월일 : 필수정보입니다";
     birthResult.style.color = "red";
     birth.style.border = "1px solid red";
+    return false;
   } else {
     birthResult.style.display = "none";
     birth.style.border = "1px solid gainsboro";
+    return true;
   }
 };
 
@@ -148,13 +158,18 @@ function phonecheck() {
     phoneResult.style.color = "red";
     phone.style.border = "1px solid red";
     phoneTypeResult.style.display = "none";
+    return false;
   } else if (!phone_format.test(phone_input)) {
     phoneTypeResult.style.display = "block";
     phoneTypeResult.innerText = "휴대전화번호 : 휴대전화번호가 정확한지 확인해주세요";
     phoneTypeResult.style.color = "red";
     phoneResult.style.display = "none";
+    return false;
   } else {
+    phone.style.border = "1px solid gainsboro";
+    phoneResult.style.display = "none";
     phoneTypeResult.style.display = "none";
+    return true;
   }
 };
 
@@ -193,4 +208,18 @@ regibutton.addEventListener("click", () => {
   birthcheck();
   phonecheck();
   pwCheckRE();
+
+  const isIdValid = idcheck();
+  const isPwValid = pwcheck();
+  const isPwCheckValid = pwCheckRE();
+  const isNameValid = namecheck();
+  const isBirthValid = birthcheck();
+  const isPhoneValid = phonecheck();
+  
+  // 모든 체크가 유효할 경우 메인 페이지로 이동
+  if (isIdValid && isPwValid && isPwCheckValid && isNameValid && isBirthValid && isPhoneValid) {
+    console.log(alert("회원가입이 완료되었습니다"));
+    
+      window.location.href = "login.html"; // 원하는 메인 페이지 링크로 변경
+  }
 });
