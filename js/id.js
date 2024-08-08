@@ -33,7 +33,7 @@ function namecheck() {
 
 };
 
-searchName.addEventListener("blur", namecheck);
+searchName.addEventListener("keydown", namecheck);
 
 function phonecheck() {
   if (!searchPhone.value) {
@@ -50,7 +50,7 @@ function phonecheck() {
   }
 };
 
-searchPhone.addEventListener("blur", phonecheck);
+searchPhone.addEventListener("keydown", phonecheck);
 
 xbox1.addEventListener("click", () => {
 })
