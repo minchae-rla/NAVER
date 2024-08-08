@@ -8,42 +8,72 @@ const nameResult = document.querySelector("#name-result");
 console.log(nameResult);
 const phoneResult = document.querySelector("#phone-result");
 console.log(phoneResult);
-const text = document.querySelector(".searchID-main-div-textbox")
+const text = document.querySelector(".searchID-main-div-textbox");
 console.log(text);
+const xbox1 = document.querySelector(".searchID-main-inputimg1");
+const xbox2 = document.querySelector(".searchID-main-inputimg2");
 
 const namereset = document.querySelector("#clearname")
 const phonereset = document.querySelector("#clearphone")
 
-button.addEventListener("click", () => {
-  text.style.display = "block"
-
+function namecheck() {
   if (!searchName.value) {
+    nameResult.style.display = "block"
     nameResult.innerText = "필수 : 이름을 입력하세요";
     nameResult.style.color = "red";
-    return;
+    text.style.display = "block";
+
+  } else {
+    nameResult.innerText = "이름 확인";
+    nameResult.style.color = "green";
+    nameResult.style.display = "block"
+    text.style.display = "block";
+    xbox1.style.display = "block";
   }
-  nameResult.innerText = "확 인";
-  nameResult.style.color = "green";
-  
-  
+
+};
+
+searchName.addEventListener("blur", namecheck);
+
+function phonecheck() {
+  if (!searchPhone.value) {
+    phoneResult.style.display = "block";
+    phoneResult.innerText = "필수 : 전화번호를 입력하세요";
+    phoneResult.style.color = "red";
+    text.style.display = "block";
+  } else {
+    phoneResult.style.display = "block";
+    phoneResult.innerText = "전화번호 확인";
+    phoneResult.style.color = "green";
+    text.style.display = "block";
+    xbox2.style.display = "block";
+  }
+};
+
+searchPhone.addEventListener("blur", phonecheck);
+
+xbox1.addEventListener("click", () => {
+})
+
+xbox2.addEventListener("click", () => {
+})
+
+namereset.addEventListener("click", () => {
+  searchName.value = "";
+  xbox1.style.display = "none";
+  namecheck();
+
+});
+
+phonereset.addEventListener("click", () => {
+  searchPhone.value = "";
+  xbox2.style.display = "none"
+
 });
 
 button.addEventListener("click", () => {
-  if (!searchPhone.value) {
-    phoneResult.innerText = "필수 : 전화번호를 입력하세요";
-    phoneResult.style.color = "red";
-    return;
-  }
-  phoneResult.innerText = "확 인";
-  phoneResult.style.color = "green";
-});
+  namecheck();
+  phonecheck();
 
-namereset.addEventListener("click" , () =>{
-  searchName.value = "";
+})
 
-});
-
-phonereset.addEventListener("click" , () =>{
-  searchPhone.value = "";
-
-});

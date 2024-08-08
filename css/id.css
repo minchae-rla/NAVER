@@ -24,8 +24,10 @@
 .searchID-main-labelbox1{
   width: 500px;
   height: 50px;
-  /* border: 1px solid #f4c2c2; */
-  /* border-radius: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-bottom: 1px solid gainsboro;
   
 }
@@ -33,14 +35,15 @@
 .searchID-main-labelbox2{
   width: 500px;
   height: 50px;
-  /* border: 1px solid #f4c2c2; */
-  /* border-radius: 10px; */
-  /* border-bottom: 1px solid #f4c2c2; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
 .searchID-main-inputbox{
-  width: 80%;
+  /* border: 1px solid black; */
+  width: 420px;
   height: 90%;
   border: none;
   outline: none;
@@ -49,11 +52,6 @@
 .searchID-main-div-textbox{
   border-top: 1px solid gainsboro;
   display: none;
-}
-
-.searchID-main-Xbutton{
-  cursor: pointer;
-  /* display: none; */
 }
 
 .searchID-main-div-box-button{
@@ -79,16 +77,26 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.searchID-main-inputimg{
-  /* background-position: center; */
+.searchID-main-inputimg1{
   width: 20px;
   height: 20px;
   cursor: pointer;
-  /* background-color: #f4c2c2; */
+  display: none;
+}
+
+.searchID-main-inputimg2{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
 }
 
 .searchID-main-link{
   inline-size: none;
   text-decoration: none;
   color: #f4c2c2;
+}
+
+#name-result, #phone-result{
+  display: none;
 }
