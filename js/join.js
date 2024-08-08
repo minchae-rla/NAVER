@@ -44,6 +44,7 @@ function pwcheck() {
     pwResult.style.display = "none";
     pw.style.border = "1px solid red";
   } else {
+    pwResult.style.display = "none";
     pwlengthResult.style.display = "none";
     pw.style.border = "1px solid gainsboro";
   }
@@ -64,10 +65,16 @@ function pwCheckRE() {
     pwSecondeResult.innerText = "비밀번호확인 : 필수정보입니다";
     pwSecondeResult.style.color = "red";
     pwSecond.style.border = "1px solid red";
-  } else if (pw.value != pwSecond.value) {
-    pwSecondeResult.innerText = "비밀번호가 일치하지 않습니다";
-  } else {
+  } else if(pw.value == pwSecond.value) {
     pwSecondeResult.style.display = "none";
+    pwSecond.style.border = "1px solid gainsboro";
+  } else if (pw.value != pwSecond.value) {
+    pwSecondeResult.style.display = "block";
+    pwSecondeResult.innerText = "비밀번호가 일치하지 않습니다";
+    pwSecondeResult.style.color = "red";
+    pwSecond.style.border = "1px solid red";
+  } else {
+    pwSecond.style.border = "1px solid gainsboro";
   }
 };
 
