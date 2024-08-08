@@ -5,15 +5,7 @@ const id = document.querySelector(".id-info");
 console.log(id);
 const idResult = document.querySelector(".id-result");
 console.log(idResult);
-// PW관련정보 선택
-const pw = document.querySelector(".pw-info");
-console.log(pw);
-const pwResult = document.querySelector(".pw-result");
-console.log(pwResult);
-const pwlengthResult = document.querySelector(".pwlength-result");
-console.log(pwlengthResult);
 
-// 함수실행
 // 아이디 입력유무 체크
 function idcheck() {
   if (!id.value) {
@@ -28,6 +20,14 @@ function idcheck() {
 };
 
 id.addEventListener("blur", idcheck);
+
+// PW관련정보 선택
+const pw = document.querySelector(".pw-info");
+console.log(pw);
+const pwResult = document.querySelector(".pw-result");
+console.log(pwResult);
+const pwlengthResult = document.querySelector(".pwlength-result");
+console.log(pwlengthResult);
 
 // 비밀번호 입력유무 체크
 function pwcheck() {
@@ -50,6 +50,30 @@ function pwcheck() {
 };
 
 pw.addEventListener("blur", pwcheck);
+
+// 비밀번호 확인(처음 입력값과 동일한지 확인)
+// PW확인 관련정보 선택
+const pwSecond = document.querySelector(".pw-infoCheck");
+console.log(pwSecond);
+const pwSecondeResult = document.querySelector(".pw-resultCheck");
+console.log(pwSecondeResult);
+
+function pwCheckRE() {
+  if(!pwSecond.value) {
+    pwSecondeResult.style.display = "block";
+    pwSecondeResult.innerText = "비밀번호확인 : 필수정보입니다";
+    pwSecondeResult.style.color = "red";
+    pwSecond.style.border = "1px solid red";
+  } else if (pw.value != pwSecond.value) {
+    pwSecondeResult.innerText = "비밀번호가 일치하지 않습니다";
+  } else {
+    pwSecondeResult.style.display = "none";
+  }
+};
+
+pwSecond.addEventListener("blur", pwCheckRE);
+
+
 
 
 // 이름, 생년월일, 전화번호 미입력시 필수 메시지 출력
@@ -130,9 +154,20 @@ function phonecheck() {
 phone.addEventListener("blur", phonecheck);
 
 // 비밀번호 토글
-const mark = document.querySelector(".mark");
-mark.addEventListener("click", (e) => {
+const mark1 = document.querySelector(".mark1");
+mark1.addEventListener("click", (e) => {
   const input = document.querySelector("input.pw-info");
+  const isText = input.type === "text";
+
+  input.setAttribute('type', isText ? 'password' : 'text');
+
+  e.target.style.backgroundImage = `url('${isText ? '../img/close.png' : '../img/open.png'}')`;
+
+});
+
+const mark2 = document.querySelector(".mark2");
+mark2.addEventListener("click", (e) => {
+  const input = document.querySelector("input.pw-infoCheck");
   const isText = input.type === "text";
 
   input.setAttribute('type', isText ? 'password' : 'text');
